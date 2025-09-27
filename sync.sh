@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
-trap 'exit 1' SIGUSR1
-
-# ---  Main script logic --- #
-cp -f index.json manga/index.min.json
-cp -f novel_index.json novel/index.min.json
+mkdir -p {manga,anime,novel} || true
+cp -f index.json manga/index.min.json || true
+cp -f novel_index.json novel/index.min.json || true
+cp -f anime_index.json anime/index.min.json || true
